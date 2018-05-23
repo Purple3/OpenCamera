@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OpenCamera</string>
+    <string name="camera_button">Click to open Camera</string>
+</resources>
