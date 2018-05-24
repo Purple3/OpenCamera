@@ -11,15 +11,15 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var btn_camera : Button
-    var REQUEST_IMAGE_CAPTURE :  Int = 1
+    private lateinit var btnCamera : Button
+    private var REQUEST_IMAGE_CAPTURE :  Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.e("activity","create")
 
-        btn_camera = findViewById(R.id.btn_to_open_camera) as Button
+        btnCamera = findViewById(R.id.btn_to_open_camera)
 
     }
 
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openCamera(view : View){
-        btn_camera.setOnClickListener{
+        btnCamera.setOnClickListener{
             Log.e("Camera clicked", "button")
             Toast.makeText(this , "Opening camera..", Toast.LENGTH_SHORT).show()
             val cameraIntent =  Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
@@ -67,8 +67,6 @@ class MainActivity : AppCompatActivity() {
                         startActivityForResult(cameraIntent, REQUEST_IMAGE_CAPTURE)
             }
         }
-
-
     }
 
 }
